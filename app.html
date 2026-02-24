@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethiopia Weather Search</title>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>የኢትዮጵያ የአየር ሁኔታ</h1>
+            <h2>Ethiopia Weather</h2>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section-wrapper">
+            <div class="search-section">
+                <input 
+                    type="text" 
+                    id="city-search" 
+                    placeholder="Search Ethiopian city or sub-city..."
+                    autocomplete="off"
+                >
+                <button id="search-btn">Search</button>
+            </div>
+        </div>
+
+        <!-- Popular Cities Quick Access -->
+        <div class="popular-cities">
+            <button class="city-btn" data-city="Addis Ababa">አዲስ አበባ</button>
+            <button class="city-btn" data-city="Bahir Dar">ባህር ዳር</button>
+            <button class="city-btn" data-city="Dire Dawa">ድሪዳዋ</button>
+            <button class="city-btn" data-city="Gondar">ጎንደር</button>
+            <button class="city-btn" data-city="Mekelle">መቀሌ</button>
+            <button class="city-btn" data-city="Jimma">ጅማ</button>
+            <button class="city-btn" data-city="Hawassa">ሃዋሳ</button>
+            <button class="city-btn" data-city="Adama">አዳማ</button>
+        </div>
+
+        <!-- Weather Display -->
+        <div class="weather-container" id="weather-container" style="display: none;">
+            <!-- Current Weather Card -->
+            <div class="weather-card current-weather">
+                <div class="weather-header">
+                    <h3 id="city-name">Addis Ababa</h3>
+                    <p id="date-time"></p>
+                </div>
+                <div class="weather-main">
+                    <div class="temperature" id="temperature">21°C</div>
+                    <div class="weather-icon" id="weather-icon">⛅</div>
+                </div>
+                <div class="weather-desc" id="weather-desc">Partly Cloudy</div>
+                <div class="weather-details">
+                    <div class="detail">
+                        <span>Humidity</span>
+                        <span id="humidity">65%</span>
+                    </div>
+                    <div class="detail">
+                        <span>Wind Speed</span>
+                        <span id="wind-speed">5 km/h</span>
+                    </div>
+                    <div class="detail">
+                        <span>Feels Like</span>
+                        <span id="feels-like">21°C</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7-Day Forecast Card -->
+            <div class="forecast-card">
+                <h3>7‑Day Extended Forecast</h3>
+                <div id="forecast-container" class="forecast-grid">
+                    <!-- Forecast items will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="error-message" style="display: none;">
+            City not found. Please try another search.
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading" id="loading" style="display: none;">
+            Loading...
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
